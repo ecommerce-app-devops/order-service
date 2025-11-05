@@ -1,0 +1,15 @@
+# .github/workflows/release.yml
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  call-template:
+    uses: ecommerce-microservice-backend-app-actions/ci-pipelines/.github/workflows/release.yml@main
+    with:
+      release_branch: main
+      node_version: '22'
+    secrets:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
