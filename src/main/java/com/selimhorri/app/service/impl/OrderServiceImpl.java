@@ -125,6 +125,8 @@ public class OrderServiceImpl implements OrderService {
                 orderDto.setOrderStatus(existingOrder.getStatus());
                 Order updatedOrder = OrderMappingHelper.mapForUpdate(orderDto, existingOrder.getCart());
                 updatedOrder.setOrderDate(existingOrder.getOrderDate());
+                updatedOrder.setStatus(existingOrder.getStatus());
+                updatedOrder.setActive(existingOrder.isActive());
                 return OrderMappingHelper.map(this.orderRepository.save(updatedOrder));
         }
 
