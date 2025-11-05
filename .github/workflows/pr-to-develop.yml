@@ -7,7 +7,7 @@ on:
 
 jobs:
   call-template:
-    uses: ecommerce-microservice-backend-app-actions/ci-pipelines/.github/workflows/pr-dev.yml@main
+    uses: ecommerce-app-devops/ci-pipelines/.github/workflows/pr-dev.yaml@main
     with:
       projectKeyBase: ${{ github.repository }}
       projectNameBase: ${{ github.repository }}

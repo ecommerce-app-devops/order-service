@@ -4,22 +4,27 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
 	<parent>
-		<groupId>com.selimhorri</groupId>
-		<artifactId>ecommerce-microservice-backend</artifactId>
-		<version>0.1.0</version>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.5.7</version>
+		<relativePath />
 	</parent>
+
+	<groupId>com.selimhorri</groupId>
 	<artifactId>order-service</artifactId>
+	<version>0.1.0</version>
 	<name>order-service</name>
-	<description>Spring Boot microservice</description>
+	<description>Spring Boot microservice!</description>
 	<packaging>jar</packaging>
-	
+
 	<properties>
 		<java.version>11</java.version>
 		<spring-cloud.version>2020.0.4</spring-cloud.version>
 		<testcontainers.version>1.16.0</testcontainers.version>
 	</properties>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -73,8 +78,62 @@
 			<artifactId>mysql</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-circuitbreaker-resilience4j</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-registry-prometheus</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-sleuth-zipkin</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-sleuth</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-jsr310</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.6.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.testcontainers</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
-	
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -93,7 +152,7 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	
+
 	<build>
 		<plugins>
 			<plugin>
@@ -111,9 +170,5 @@
 		</plugins>
 		<finalName>${project.artifactId}-v${project.version}</finalName>
 	</build>
-	
+
 </project>
-
-
-
-

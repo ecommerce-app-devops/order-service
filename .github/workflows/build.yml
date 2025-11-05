@@ -10,7 +10,7 @@ on:
 
 jobs:
   call-template:
-    uses: ecommerce-microservice-backend-app-actions/ci-pipelines/.github/workflows/build.yml@main
+    uses: ecommerce-app-devops/ci-pipelines/.github/workflows/build.yml@main
     with:
       image_name: ${{ github.repository }}
       image_tag: ${{ github.ref_name }}
