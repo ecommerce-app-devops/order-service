@@ -8,6 +8,3 @@ on:
 jobs:
   call-template:
     uses: ecommerce-app-devops/ci-pipelines/.github/workflows/pr-dev.yaml@main
-    with:
-      projectKeyBase: ${{ github.repository }}
-      projectNameBase: ${{ github.repository }}
